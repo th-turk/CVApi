@@ -6,7 +6,7 @@ return [
 	/*
 	 |
 	 |
-	 | Public key is used to identify the user
+	 | Public key is used to identify the user (yes)
 	 |
 	 |
 	 |
