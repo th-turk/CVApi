@@ -2,33 +2,35 @@
 
 return [
 
-
 	/*
-	 |
-	 |
-	 | Public key is used to identify the user (yes)
-	 |
-	 |
-	 |
+	 | Users should enter their public key provided when they create an application
 	*/
 	"public_key" => "arian",
 
 	/*
-	 |
-	 |
-	 |
-	 | Secret key is used to identify the user
-	 |
-	 |
-	 |
+	 | Users should enter their secret key provided when they create an application
 	*/
 	"secret_key" => "ajdari",
 
-
-
-	
+	/*
+	 | Password is used to authenticate the user
+	*/
 	"password" => "tahaturk",
-	"route" => "http://f1265f56.ngrok.io/api/request",
+
+	/*
+	 | Since CVApi is built with the help from CUrl Library, users can redirect the request at another route.
+	 | In order to use CVApi, users should not change this setting.
+	*/
+	 "route" => "http://e6fda704.ngrok.io/api/request",
+
+	/*
+	 | isPost sets the method type to POST when using CUrl. If users change the route and start using GET
+	 | requests, the can set isPost to false. Otherwise, it should be left as true
+	*/
 	"isPost" => true,
+
+	/*
+	 | Path is used to set the place where the user wants to save the the images.
+	*/
 	"path" => realpath('') . '/'
 ];
