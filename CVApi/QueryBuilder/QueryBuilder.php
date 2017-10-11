@@ -97,23 +97,45 @@ trait QueryBuilder
 		return $this;
 	}
 
-	public function dilate()
+	public function dilate($kernel_size = 3, $iterations = 1)
 	{
+		$this->options .= 'dilate:' . $kernel_size . ':' . $iterations . '|';
 		return $this;
 	}
 
-	public function erode()
+	public function erode($kernel_size = 3, $iterations = 1)
 	{
+		$this->options .= 'erode:' . $kernel_size . ':' . $iterations . '|';
 		return $this;
 	}
 
-	public function opening()
-	{
+	public function opening($kernel_size = 3)
+	{	
+		$this->options .= 'opening:' . $kernel_size . '|';
 		return $this;
 	}
 
-	public function closing()
+	public function closing($kernel_size = 3)
 	{
+		$this->options .= 'closing:' . $kernel_size . '|';
+		return $this;
+	}
+
+	public function morphGradient($kernel_size = 3)
+	{
+		$this->options .= 'morphGradient:' . $kernel_size . '|';
+		return $this;
+	}
+
+	public function topHat($kernel_size = 3)
+	{
+		$this->options .= 'topHat:' . $kernel_size . '|';
+		return $this;
+	}
+
+	public function blackHat($kernel_size = 3)
+	{
+		$this->options .= 'blackHat:' . $kernel_size . '|';
 		return $this;
 	}
 
