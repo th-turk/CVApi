@@ -5,6 +5,8 @@ namespace CVApi\Contracts;
 interface QueryBuilderContract
 {
 	public function grayscale();
+	
+
 	public function bgr();
 	public function rgb();
 	public function hsv();
@@ -25,6 +27,8 @@ interface QueryBuilderContract
 	public function erode();
 	public function opening();
 	public function closing();
+	
+
 	public function pyrUp($times = 1);
 	public function pyrDown($times = 1);
 }

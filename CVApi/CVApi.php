@@ -23,7 +23,7 @@ class CVApi extends RequestController implements QueryBuilderContract
 		return self::$_instance;
 	}
 
-	public function image($images = null, $postFieldName = 'image', $mime = 'image/png')
+	public function images($images = null, $postFieldName = 'image', $mime = 'image/png')
 	{
 		$this->resources($images, $postFieldName, $mime);
 		$this->sendPostRequest();

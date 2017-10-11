@@ -125,7 +125,7 @@ trait QueryBuilder
 
 	public function pyrDown($times = 1)
 	{
-		$this->options .= 'pyrDown' . $times . '|'; 
+		$this->options .= 'pyrDown:' . $times . '|'; 
 		return $this;
 	}
 }
