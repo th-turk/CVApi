@@ -1,36 +1,49 @@
 <?php
 
-return [
+namespace CVApi\Config;
 
-	/*
-	 | Users should enter their public key provided when they create an application
-	*/
-	"public_key" => "arian",
+trait Config
+{
+	private $config = [];
+	private $public_key;
+	private $secret_key;
+	private $password;
+	protected $route;
+	protected $isPost;
+	protected $path;
 
-	/*
-	 | Users should enter their secret key provided when they create an application
-	*/
-	"secret_key" => "ajdari",
-
-	/*
-	 | Password is used to authenticate the user
-	*/
-	"password" => "tahaturk",
-
-	/*
-	 | Since CVApi is built with the help from CUrl Library, users can redirect the request at another route.
-	 | In order to use CVApi, users should not change this setting.
-	*/
-	 "route" => "http://e6fda704.ngrok.io/api/request",
-
-	/*
-	 | isPost sets the method type to POST when using CUrl. If users change the route and start using GET
-	 | requests, the can set isPost to false. Otherwise, it should be left as true
-	*/
-	"isPost" => true,
-
-	/*
-	 | Path is used to set the place where the user wants to save the the images.
-	*/
-	"path" => realpath('') . '/'
-];
+	protected function getConfigFile()
+	{
+		$this->config = include 'config/config.php';
+		$this->setPublicKey();
+		$this->setSecretKey();
+		$this->setPassword();
+		$this->setRoute();
+		$this->setIsPost();
+		$this->setPath();
+	}
+	private function setPublicKey()
+	{
+		$this->public_key = $this->config['public_key'];
+	}
+	private function setSecretKey()
+	{
+		$this->secret_key = $this->config['secret_key'];
+	}
+	private function setPassword()
+	{
+		$this->password = $this->config['password'];
+	}
+	private function setRoute()
+	{
+		$this->route = $this->config['route'];
+	}
+	private function setIsPost()
+	{
+		$this->isPost = $this->config['isPost'];
+	}
+	private function setPath()
+	{
+		$this->path = $this->config['path'];
+	}
+}

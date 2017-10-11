@@ -1,18 +1,15 @@
 <?php
 
-namespace CVApi;
+namespace CVApi\Request;
 
 use \CurlFile;
-use CVApi\Config;
 
 class RequestController 
 {	
 
-	use Config;
-	
-	protected $options = "";
+	public $options = "";
 	protected $data = [];
-	protected $result = [];
+	public $result = [];
 
 	public function __construct()
 	{
