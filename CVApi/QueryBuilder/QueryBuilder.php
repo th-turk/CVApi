@@ -10,40 +10,86 @@ trait QueryBuilder
 		return $this;
 	}
 
-	public function bgr()
+	public function bgrToGray()
 	{
-		$this->options .= 'bgr|';
+		$this->options .= 'bgrToGray|';
 		return $this;
 	}
 
-	public function rgb()
+	public function grayToBgr()
 	{
-		$this->options .= 'rgb|';
+		$this->options .= 'grayToBgr|';
 		return $this;
 	}
 
-	public function hsv()
+	public function rgbToGray()
 	{
-		$this->options .= 'hsv|';
+		$this->options .= 'rgbToGray|';
 		return $this;
 	}
 
-	public function histogram()
+	public function grayToRgb()
 	{
-		$this->options .= 'histogram|';
+		$this->options .= 'grayToRgb|';
+		return $this;
+	}
+
+	public function bgrToRgb()
+	{
+		$this->options .= 'bgrToRgb|';
+		return $this;
+	}
+
+	public function rgbToBgr()
+	{
+		$this->options .= 'rgbToBgr|';
+		return $this;
+	}
+
+	public function rgbToHsv()
+	{
+		$this->options .= 'rgbToHsv|';
+		return $this;
+	}
+
+	public function bgrToHsv()
+	{
+		$this->options .= 'bgrToHsv|';
+		return $this;
+	}
+
+	public function hsvToBgr()
+	{
+		$this->options .= 'hsvToBgr|';
+		return $this;
+	}
+
+	public function hsvToRgb()
+	{
+		$this->options .= 'hsvToRgb|';
+		return $this;
+	}
+
+	public function histogram($bean_size = 256, $range_min = 0, $range_max = 256)
+	{
+		$this->options .= 'histogram:' . $bean_size . ':' . $range_min . ':' . $range_max  .'|';
 		return $this;
 	}
 
 	public function imageChannels($array = ['B', 'G', 'R'])
 	{
-		implode(';', $array);
-		$this->options .= 'imageChannels:' . $array . '|';
+		if (in_array('B', $array)) 
+			$this->options .= 'blueChannel|';
+		if (in_array('G', $array))
+			$this->options .= 'greenChannel|';
+		if (in_array('R', $array))
+			$this->options .= 'redChannel|';
 		return $this;
 	}
 
 	public function translate($x, $y)
 	{
-		$this->options .= 'translate:x=' . $x . ';y=' . $y . '|';
+		$this->options .= 'translate:' . $x . ':' . $y . '|';
 		return $this; 
 	}
 
