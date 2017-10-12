@@ -10,6 +10,7 @@ class RequestController
 	public $options = "";
 	protected $data = [];
 	public $result = [];
+	public $image;
 
 	public function __construct()
 	{

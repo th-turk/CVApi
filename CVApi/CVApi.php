@@ -33,8 +33,18 @@ class CVApi extends RequestController implements QueryBuilderContract
 
 	public function results(callable $c)
 	{
+		$this->image = (json_decode($this->result[0]))->photo;
 		if (is_callable($c)) {
 			call_user_func($c, self::$_instance);
 		}
 	}
+
+	public function save($name)
+	{
+		$data = base64_decode($this->image);
+		file_put_contents($name, $data);
+	}
+
+
+	
 }
