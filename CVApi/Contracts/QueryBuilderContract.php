@@ -18,20 +18,22 @@ interface QueryBuilderContract
 	public function histogram();
 	public function imageChannels($array = []);
 	public function translate($x, $y);
-
-	/* TAHA YAPACAK */
-	public function rotate();
-	public function advRotate();
-	public function scale();
-	public function resize();
-	public function crop();
-	public function brightness();
-	public function darkness();
-	public function blurring();
-	public function sharpening();
-	public function threshold();
-	/* TAHA YAPACAK */
-
+	public function rotate($x, $y, $angle);
+	public function transpose();
+	public function enlarge($fx, $fy, $interpolation);
+	public function reduce($fx, $fy);
+	public function resize($fx, $fy, $interpolation);
+	public function crop($y1, $y2, $x1, $x2);
+	public function brightness($value);
+	public function darken($value);
+	public function blur($kernel_size);
+	public function normalBlur($box_size);
+	public function gaussianBlur($kernel_size);
+	public function medianBlur($size);
+	public function bilateralBlur();
+	public function sharpen();
+	public function threshold($min, $max, $type);
+	public function adaptiveThreshold($type);
 	public function dilate();
 	public function erode();
 	public function opening();

@@ -93,53 +93,99 @@ trait QueryBuilder
 		return $this; 
 	}
 
-	public function rotate(/* calisalicak */)
+	public function rotate($x, $y, $angle)
 	{
+		$this->options .= 'rotate:' . $x . ':' . $y . ':' . $angle . '|';
 		return $this;
 	}
 
-	public function advRotate(/* calisalicak */)
+	public function transpose()
 	{
+		$this->options .= 'transpose:|';
 		return $this;
 	}
 
-	public function scale()
-	{
+	public function enlarge($fx, $fy, $interpolation)
+	{	
+		$this->options .= 'enlarge:' . $fx . ':' . $fy . ':' . $interpolation . '|';
 		return $this;
 	}
 
-	public function resize()
+	public function reduce($fx, $fy)
 	{
+		$this->options .= 'reduce:' . $fx . ':' . $fy . '|';
 		return $this;
 	}
 
-	public function crop()
+	public function resize($x, $y, $interpolation)
 	{
+		$this->options .= 'resize:' . $x . ':' . $y . ':' .  $interpolation . '|';
 		return $this;
 	}
 
-	public function brightness()
-	{
+	public function crop($y1, $y2, $x1, $x2)
+	{	
+		$this->options .= 'crop:' . $y1 . ':' . $y2 . ':' . $x1 . ':' . $x2 . '|';
 		return $this;
 	}
 
-	public function darkness()
+	public function brightness($value)
 	{
+		$this->options .= 'brightness:'. $value . '|';
 		return $this;
 	}
 
-	public function blurring()
+	public function darken($value)
 	{
+		$this->options .= 'darken:'. $value . '|';
 		return $this;
 	}
 
-	public function sharpening()
+	public function blur($kernel_size)
 	{
+		$this->options .= 'blur:' . $kernel_size . '|';
 		return $this;
 	}
 
-	public function threshold()
+	public function normalBlur($box_size)
 	{
+		$this->options .= 'normalBlur:' . $box_size . '|';
+		return $this;
+	}
+
+	public function gaussianBlur($kernel_size)
+	{
+		$this->options .= 'gaussianBlur:' . $kernel_size . '|';
+		return $this;
+	}
+
+	public function medianBlur($size)
+	{
+		$this->options .= 'medianBlur:' . $size . '|';
+		return $this;
+	}
+
+	public function bilateralBlur()
+	{
+		$this->options .= 'bilateralBlur:|';
+		return $this;
+	}
+
+	public function sharpen()
+	{
+		$this->options .= 'sharpen:|'; 
+		return $this;
+	}
+
+	public function threshold($min, $max, $type)
+	{
+		$this->options .= 'threshold:' . $min . ':' . $max . ':' . $type . '|';
+		return $this;
+	}
+
+	public function adaptiveThreshold($type)
+	{
+		$this->options .= 'adaptiveThreshold:' . $type . '|';
 		return $this;
 	}
 
