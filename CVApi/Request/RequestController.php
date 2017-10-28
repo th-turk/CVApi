@@ -23,7 +23,7 @@ class RequestController
 
 			for ($i = 0; $i < count($images); $i++) {
 				$cfile = new CURLFile($this->path . $images[$i], $mime, 'image'); 
-				$this->data[] = array("image" => $cfile, 'options' => $this->options);
+				$this->data[] = array("image" => $cfile);
 				
 			}
 		}
@@ -51,6 +51,7 @@ class RequestController
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
         for($i = 0; $i < count($this->data); $i++) {
+        	$this->data[$i]['options'] = $this->options; 
         	curl_setopt($ch, CURLOPT_POSTFIELDS, $this->data[$i]);
         	$this->result[] = curl_exec($ch);
         }
