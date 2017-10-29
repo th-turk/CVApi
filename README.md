@@ -10,12 +10,13 @@ CVAPi library is built entirely in PHP to bring the power of computer vision int
 ## Why use CVApi
 - Save your time by not having to worry about different versions and implementations of [OpenCV](https://opencv.org/)
 - Easily integrate this API into any existing PHP Project, or use it in any popular framework such as [Laravel](https://laravel.com/) or [Symfony](https://symfony.com/)
-- Our up-to-date documentation provides thorough instructions for each operations
+- Our up-to-date documentation provides thorough instructions for each operation
 - Computer Vision related heavy calculations are handled by our servers
 - <strong>...and many more</strong>
 
 ## Version Compatability
-- CVApi is compatible with PHP5.6 and above
+- CVApi is compatible with [PHP5.3](http://php.net/releases/5_3_0.php) and above
+- CVApi is compatible with [OpenCV 3.3](https://opencv.org/opencv-3-3.html)
 - CVApi supports most image file extensions
 - There are no known dependency conflicts
 
