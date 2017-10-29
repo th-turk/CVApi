@@ -59,8 +59,6 @@ CVApi::make(['old_image.jpg'])
 	->histogram(['B', 'G', 'R'])
 	->results(function($new_images) {
 		$new_images->save();
-	->results(function($images) {
-		$images->save();
 });
 ```
 CVApi is automatically configured to understand the source of the images. If we leave the <strong>make</strong> argument empty, CVApi automatically looks for images coming from form requests.
