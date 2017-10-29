@@ -2,7 +2,7 @@
 
 [![Packagist](https://img.shields.io/packagist/dt/cv-api/cv-api.svg)](https://packagist.org/packages/cv-api/cv-api)
 [![Packagist](https://img.shields.io/packagist/v/cv-api/cv-api.svg)](https://packagist.org/packages/cv-api/cv-api)
-[![Packagist](https://img.shields.io/packagist/l/cv-api/cv-api.svg)](https://packagist.org/packages/cv-api/cv-api)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/arianajdari/CVApi)
 
 # CVApi
 CVAPi library is built entirely in PHP to bring the power of computer vision into web development. Under the hood of CVAPi lies [OpenCV](https://opencv.org/), which is used extensively for computer vision applications.
