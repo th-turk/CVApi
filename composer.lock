@@ -4,52 +4,16 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad4486a9bcb388dc22bb19a94f382bfd",
-    "packages": [
-        {
-            "name": "cv-api/cv-api",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/arianajdari/CVApi.git",
-                "reference": "4b83d34ed7e7960c2f8199649602e7b8a1540b6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/arianajdari/CVApi/zipball/4b83d34ed7e7960c2f8199649602e7b8a1540b6f",
-                "reference": "4b83d34ed7e7960c2f8199649602e7b8a1540b6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CVApi\\": "cvapi/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Arian Ajdari",
-                    "email": "arianajdari23@gmail.com"
-                },
-                {
-                    "name": "Taha Turk",
-                    "email": "tahaturk25@hotmail.com"
-                }
-            ],
-            "description": "A powerful PHP library supporting Computer Vision manipulations",
-            "time": "2017-10-07T11:52:32+00:00"
-        }
-    ],
+    "content-hash": "a2a72a786819f29e0f55ed8e347c195e",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3.0"
+    },
     "platform-dev": []
 }

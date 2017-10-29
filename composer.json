@@ -1,6 +1,7 @@
 {
     "name": "cv-api/cv-api",
     "description": "A powerful PHP library supporting Computer Vision manipulations",
+    "license": "MIT",
     "authors": [
         {
             "name": "Arian Ajdari",
