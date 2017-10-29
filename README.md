@@ -14,11 +14,14 @@ CVAPi library is built entirely in PHP to bring the power of computer vision int
 - Computer Vision related heavy calculations are handled by our servers
 - <strong>...and many more</strong>
 
+<<<<<<< HEAD
 ## Version Compatability
 - CVApi is compatible with PHP5.6 and above
 - CVApi supports most image file extensions
 - There are no known dependency conflicts
 
+=======
+>>>>>>> e77dff7b84ca258168604908aa8527d9f9205558
 ## Getting Started
 Firstly, make sure you have Composer installed in your system. You can acquire it by clicking [here](https://getcomposer.org/)
 
@@ -49,7 +52,11 @@ If you receive the welcome message, you are good to go
 ## Examples
 Using CVApi is fairly straightforward. For example, we would like to save a grayscale version of our image. In order to do this you have to type: 
 ```bash
+<<<<<<< HEAD
 CVApi::make(['old_image.jpg'])->grayscale()->results(function($new_image) { $new_image->save(); });
+=======
+CVApi::make(['old_image.jpg'])->grayscale()->results(function($image) { $image->save(); });
+>>>>>>> e77dff7b84ca258168604908aa8527d9f9205558
 ```
 As we can see, all methods in CVApi are chainable. We can perform more than one operation at onceP
 ```bash
@@ -57,8 +64,13 @@ CVApi::make(['old_image.jpg'])
 	->resize(300, 300)
 	->brightness(85)
 	->histogram(['B', 'G', 'R'])
+<<<<<<< HEAD
 	->results(function($new_images) {
 		$new_images->save();
+=======
+	->results(function($images) {
+		$images->save();
+>>>>>>> e77dff7b84ca258168604908aa8527d9f9205558
 });
 ```
 CVApi is automatically configured to understand the source of the images. If we leave the <strong>make</strong> argument empty, CVApi automatically looks for images coming from form requests.
@@ -68,9 +80,12 @@ CVApi::make()->pyrDown(3)->results(function($image) { $image->save(); });
 
 ## Documentation
 You can find detailed documentation in our website [CVApi](#)
+<<<<<<< HEAD
 
 ## Issues
 If you have encountered any security issues or unexpected crashes, please contant us at arianajdari23@gmail.com
 
 ## License
 This software is licensed under [MIT](https://opensource.org/licenses/MIT) License
+=======
+>>>>>>> e77dff7b84ca258168604908aa8527d9f9205558
