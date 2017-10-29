@@ -26,16 +26,40 @@ As Composer is done fetching necessary dependencies, make sure to register for a
 After the confirmation e-mail, open the <strong>config</strong> file inside <strong>vendor/CVApi</strong> and edit these settings
 
 ```bash
-	"public_key" => "your-public-key",
-	"secret_key" => "your-secret-key",
-	"password" => "your-password",
-	"path" => "your-path-to-storage"
+"public_key" => "your-public-key",
+"secret_key" => "your-secret-key",
+"password" => "your-password",
+"path" => "your-path-to-storage"
 ```
 In the end we can test whether CVApi is configured properly by trying out this piece of code
 ```bash
-	require_once __DIR__ . 'path_to_autoload_file.php';
+require_once __DIR__ . 'path_to_autoload_file.php';
   
-  use CVApi/CVApi;
+use CVApi/CVApi;
   
-  CVApi::test();
+CVApi::test();
 ```
+If you receive the welcome message, you are good to go
+
+## Examples
+Using CVApi is fairly straightforward. For example, we would like to save a grayscale version of our image. In order to do this you have to type: 
+```bash
+CVApi::make(['old_image.jpg'])->grayscale()->results(function($image) { $image->save(); });
+```
+As we can see, all methods in CVApi are chainable. We can perform more than one operation at onceP
+```bash
+CVApi::make(['old_image.jpg'])
+	->resize(300, 300)
+	->brightness(85)
+	->histogram(['B', 'G', 'R'])
+	->results(function($images) {
+		$images->save();
+});
+```
+CVApi is automatically configured to understand the source of the images. If we leave the <strong>make</strong> argument empty, CVApi automatically looks for images coming from form requests.
+```bash
+CVApi::make()->pyrDown(3)->results(function($image) { $image->save(); });
+```
+
+## Documentation
+You can find detailed documentation in our website [CVApi](#)
