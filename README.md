@@ -14,7 +14,6 @@ CVAPi library is built entirely in PHP to bring the power of computer vision int
 - Computer Vision related heavy calculations are handled by our servers
 - <strong>...and many more</strong>
 
-<<<<<<< HEAD
 ## Version Compatability
 - CVApi is compatible with PHP5.6 and above
 - CVApi supports most image file extensions
